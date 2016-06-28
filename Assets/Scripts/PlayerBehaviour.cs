@@ -39,5 +39,11 @@ public class PlayerBehaviour : MonoBehaviour {
 
 		// The animation should no longer play
 		GetComponent<Animator>().speed = 0.0f;
+
+		// Finally, create a GameEndBehaviour so we can restart
+		if (!gameObject.GetComponent<GameEndBehaviour>())
+		{
+			gameObject.AddComponent<GameEndBehaviour>();
+		}
 	}
 }
