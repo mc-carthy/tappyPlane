@@ -14,7 +14,7 @@ public class RepeatingBackground : MonoBehaviour {
 		Vector3 pos = transform.position;
 
 		// Move the object to the left
-		pos.x -= scrollSpeed * Time.fixedDeltaTime;
+		pos.x -= scrollSpeed * Time.fixedDeltaTime * GameController.speedModifier;
 
 		// Check if the object is off-screen
 		if (transform.position.x < -scrollWidth) {
