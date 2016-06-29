@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
@@ -20,11 +21,26 @@ public class GameController : MonoBehaviour {
 	[Tooltip("Maximum Y value used for obstacle")]
 	public float obstacleMaxY = 1.3f;
 
+	private static Text scoreText;
+	private static int score;
+
+	public static int Score
+	{
+		get { return score; }
+		set
+		{
+			score = value;
+			scoreText.text = score.ToString();
+		}
+	}
+
 	// Use this for initialization
 	void Start ()
 	{
 		speedModifier = 1.0f;
 		gameObject.AddComponent<GameStartBehaviour> ();
+		score = 0;
+		scoreText = GameObject.Find ("ScoreText").GetComponent<Text> ();
 	}
 
 	/// <summary>

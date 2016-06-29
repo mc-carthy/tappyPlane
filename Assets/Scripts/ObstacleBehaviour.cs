@@ -6,4 +6,8 @@ public class ObstacleBehaviour : RepeatingBackground {
 	{
 		Destroy(this.gameObject);
 	}
+
+	public void OnTriggerEnter2D(Collider2D collision) {
+		GameController.Score++;
+	}
 }
